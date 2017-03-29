@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 16:00:17 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/27 17:00:14 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/03/29 11:13:48 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,18 @@ int			UnitNode::addUnit(ISpaceMarine *add)
 		while (tmp->getNext() != NULL)
 		{
 			if (tmp->getUnit() == add)
+			{
+				std::cout << "I'm already in this squad !!"
+					<< std::endl;
 				return (0);
+			}
 			tmp = tmp->getNext();
+		}
+		if (add == tmp->getUnit())
+		{
+			std::cout << "I'm already in this squad !!"
+				<< std::endl;
+			return (0);
 		}
 		tmp->_next = new UnitNode(add);
 	}
