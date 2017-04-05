@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 12:39:45 by trecomps          #+#    #+#             */
-/*   Updated: 2017/04/05 15:01:17 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/04/05 15:01:54 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void		*serialize(void)
 	char	*d;
 	int		i;
 
+	i = 42;
 	d = static_cast<char *>(malloc(sizeof(char) * 16 + sizeof(int)));
 	d[20] = '\0';
 	std::memcpy(d, "12345678", 8);
