@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 11:30:11 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/29 13:59:46 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/03/29 16:01:30 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void			Bureaucrat::signForm(Form &toSign) const
 	try
 	{
 		toSign.beSigned(*this);
-		std::cout << *this << " signs " << toSign << std::endl;
+		std::cout << *this << " signs " << toSign;
 	}
 	catch (std::exception &e)
 	{

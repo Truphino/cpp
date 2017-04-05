@@ -6,14 +6,14 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 13:10:38 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/29 14:09:36 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/03/29 15:00:27 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.class.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
-		Form(145, 137, target)
+		Form(145, 137, target, "Shrubbery Creation")
 {
 	//std::cout << "Default constructor called" << std::endl;
 

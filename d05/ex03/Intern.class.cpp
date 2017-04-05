@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 14:22:36 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/29 14:43:29 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/03/29 16:03:35 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ Form	*Intern::makeForm(std::string const formType,
 	try
 	{
 		newForm = this->_createForm(formType, target);
-		std::cout << "Intern creates " << *newForm << std::endl;
+		std::cout << "Intern creates " << *newForm;
 	}
 	catch (std::exception &e)
 	{
 		newForm = NULL;
-		std::cout << formType << "is an unknow form type" << std::endl;
+		std::cout << formType << " is an unknow form type" << std::endl;
 	}
 	return (newForm);
 }

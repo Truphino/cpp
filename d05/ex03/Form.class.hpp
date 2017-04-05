@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 12:25:13 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/29 14:34:53 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/03/29 15:24:04 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ public :
 	};
 
 	Form(void);
-	Form(int const signGrade, int const execGrade, std::string target);
+	Form(int const signGrade, int const execGrade, std::string target,
+			std::string formType);
 	Form(Form const &rhs);
 	virtual ~Form(void);
 
@@ -50,6 +51,7 @@ public :
 	bool	isItSigned(void) const;
 	void	beSigned(Bureaucrat const &signer);
 	std::string		getTarget(void) const;
+	std::string		getType(void) const;
 
 	virtual void		execute(Bureaucrat const &executor) const = 0;
 
@@ -62,6 +64,7 @@ private :
 	int			_signGrade;
 	int			_execGrade;
 	std::string	_target;
+	std::string	_formType;
 
 protected :
 

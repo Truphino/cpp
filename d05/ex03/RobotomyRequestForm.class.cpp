@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 13:10:38 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/29 14:18:14 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/03/29 15:00:08 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
-		Form(72, 45, target)
+		Form(72, 45, target, "Robotomy Request")
 {
 	//std::cout << "Default constructor called" << std::endl;
 

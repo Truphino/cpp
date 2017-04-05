@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 12:19:02 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/29 14:43:36 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/03/29 16:02:10 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,23 @@
 #include "PresidentialPardonForm.class.hpp"
 #include "Form.class.hpp"
 #include "Intern.class.hpp"
+#include "OfficeBlock.class.hpp"
 
 int		main(void)
 {
+	Intern		idiot;
+	Bureaucrat	signer("signer", 73);
+	Bureaucrat	executor("executor", 23);
+	OfficeBlock	office1;
+
+	office1.setIntern(&idiot);
+	office1.setSigner(&signer);
+	office1.setExecutor(&executor);
 	try
 	{
-		Bureaucrat		john("John", 46);
-		Bureaucrat		president("Zafod", 1);
-		Form			*s;
-		Intern			someRandom;
-
-		s = someRandom.makeForm("robotomy request", "Boss");
-		std::cout << john;
-		std::cout << *s << std::endl;;
-		president.executeForm(*s);
-		john.signForm(*s);
-		john.executeForm(*s);
-		john.incGrade();
-		john.executeForm(*s);
+		office1.doBureaucracy("rbotomy request", "claptrap");
+		signer.incGrade();
+		office1.doBureaucracy("rbotomy request", "claptrap");
 	}
 	catch (std::exception &e)
 	{

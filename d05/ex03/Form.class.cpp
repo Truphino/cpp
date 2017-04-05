@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 12:25:39 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/29 14:11:00 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/03/29 15:04:53 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ Form::Form(void) : _signed(false), _signGrade(1), _execGrade(1)
 	return ;
 }
 
-Form::Form(int const signGrade, int const execGrade, std::string target) :
-			_signed(false), _target(target)
+Form::Form(int const signGrade, int const execGrade,
+		std::string target, std::string formType) :
+			_signed(false), _target(target), _formType(formType)
 {
 	//std::cout << "Parametric constructor called" << std::endl;
 	this->_verifGrade(signGrade);
@@ -106,6 +107,11 @@ std::string		Form::getTarget(void) const
 	return (this->_target);
 }
 
+std::string		Form::getType(void) const
+{
+	return (this->_formType);
+}
+
 void		Form::beSigned(Bureaucrat const &signer)
 {
 	this->_canSign(signer.getGrade());
@@ -127,13 +133,13 @@ Form		&Form::operator=(Form const &rhs)
 
 std::ostream	&operator<<(std::ostream &o, Form const &i)
 {
-	o << "Form sign grade: " << i.getSignGrade()
-		<< " Execute grade: " << i.getExecGrade();
+	o << i.getType() << " Form (s.grade " << i.getSignGrade()
+		<< ", ex.grade " << i.getExecGrade() << ") targeted on "
+		<< i.getTarget();
 	if (i.isItSigned())
-		o << " (signed)";
+		o << " (Signed)" << std::endl;
 	else
-		o << " (not signed)";
-	o << std::endl;
+		o << " (Unsigned)" << std::endl;
 
 	return (o);
 }

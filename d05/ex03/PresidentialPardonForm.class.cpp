@@ -6,14 +6,14 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 13:10:38 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/29 13:55:22 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/03/29 15:00:43 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.class.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) :
-		Form(25, 5, target)
+		Form(25, 5, target, "Presidential Pardon")
 {
 	//std::cout << "Default constructor called" << std::endl;
 
