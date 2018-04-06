@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 14:56:55 by                   #+#    #+#             */
-/*   Updated: 2017/03/13 18:30:13 by                  ###   ########.fr       */
+/*   Updated: 2018/04/06 11:25:51 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,26 +64,26 @@ void		Contact::add(void)
 	Contact::_num_contact += 1;
 	std::cout << "Enter contact informations:";
 	std::cout << std::endl << "First Name:\t";
-	std::cin >> this->first_name;
+	getline(std::cin, this->first_name);
 	std::cout << "Last Name:\t";
-	std::cin >> this->last_name;
+	getline(std::cin, this->last_name);
 	std::cout << "Nickname:\t";
-	std::cin >> this->nickname;
+	getline(std::cin, this->nickname);
 	std::cout << "Login:\t\t";
-	std::cin >> this->login;
+	getline(std::cin, this->login);
 	std::cout << "Postal adress:\t";
-	std::cin >> this->postal_adress;
+	getline(std::cin, this->postal_adress);
 	std::cout << "Email adress:\t";
-	std::cin >> this->email_adress;
+	getline(std::cin, this->email_adress);
 	std::cout << "Phone number:\t";
-	std::cin >> this->phone_number;
+	getline(std::cin, this->phone_number);
 	std::cout << "Birthday date:\t";
-	std::cin >> this->birthday_date;
+	getline(std::cin, this->birthday_date);
 	std::cout << "Favorite meal:\t";
-	std::cin >> this->favorite_meal;
+	getline(std::cin, this->favorite_meal);
 	std::cout << "Underwear color:";
-	std::cin >> this->underwear_color;
+	getline(std::cin, this->underwear_color);
 	std::cout << "Darkest secret:\t";
-	std::cin >> this->darkest_secret;
+	getline(std::cin, this->darkest_secret);
 	return ;
 }

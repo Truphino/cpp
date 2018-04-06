@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 14:57:48 by                   #+#    #+#             */
-/*   Updated: 2017/03/13 19:16:53 by                  ###   ########.fr       */
+/*   Updated: 2018/04/06 11:28:24 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	search_contact(Contact contact[8])
 		i++;
 	}
 	std::cout << "Enter a index:";
-	std::cin >> buf;
+	getline(std::cin, buf);
 	if (buf.length() == 1 && 48 <= buf[0] && buf[0] <= 57)
 		i = buf[0] - 48;
 	else
@@ -89,7 +89,7 @@ int		main(void)
 	std::cout << "Please enter a command" << std::endl;
 	while (1)
 	{
-		std::cin >> buf;
+		std::cin.getline(buf, 512);
 		if (std::string("EXIT").compare(buf) == 0)
 			exit(0);
 		else if (std::string("ADD").compare(buf) == 0)
