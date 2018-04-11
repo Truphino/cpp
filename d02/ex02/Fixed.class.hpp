@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 17:07:28 by                   #+#    #+#             */
-/*   Updated: 2018/04/11 12:09:56 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/11 12:08:45 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,14 @@ private :
 };
 
 std::ostream		&operator<<(std::ostream &o, Fixed const &i);
+
+bool				operator<(Fixed const &a, Fixed const &b);
+bool				operator>(Fixed const &a, Fixed const &b);
+bool				operator<=(Fixed const &a, Fixed const &b);
+bool				operator>=(Fixed const &a, Fixed const &b);
+bool				operator==(Fixed const &a, Fixed const &b);
+bool				operator!=(Fixed const &a, Fixed const &b);
+
+Fixed				operator+(Fixed const &a, Fixed const &b);
 
 #endif

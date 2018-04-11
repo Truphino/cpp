@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 18:08:54 by                   #+#    #+#             */
-/*   Updated: 2018/04/11 11:01:21 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/11 11:40:31 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@
 #include "Fixed.class.hpp"
 
 int
-main( void ) {
-	Fixed a;
-	Fixed const b( 10 ); Fixed const c( 42.42f ); Fixed const d( b );
-	a = Fixed( 1234.4321f );
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-	return 0; }
+main( void )
+{
+	Fixed const b( 11.1f);
+	Fixed const c( 10.2f );
+
+	if (b < c)
+		std::cout << b << " < " << c << std::endl;
+	else
+		std::cout << b << " > " << c << std::endl;
+
+	return 0;
+}

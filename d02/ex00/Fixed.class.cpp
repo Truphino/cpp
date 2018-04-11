@@ -6,13 +6,13 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 17:04:51 by                   #+#    #+#             */
-/*   Updated: 2017/03/14 17:28:06 by                  ###   ########.fr       */
+/*   Updated: 2018/04/11 12:10:40 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.class.hpp"
 
-const int			Fixed::_fractional_bit = 8;
+const int			Fixed::fractional_bit = 8;
 
 Fixed::Fixed(void) : _fixed_val(0)
 {

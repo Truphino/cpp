@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 17:07:28 by                   #+#    #+#             */
-/*   Updated: 2017/03/14 17:23:02 by                  ###   ########.fr       */
+/*   Updated: 2018/04/11 12:10:30 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ public :
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 
+	static int const	fractional_bit;
+
 private :
 
 	int					_fixed_val;
-	static int const	_fractional_bit;
 
 };
 
