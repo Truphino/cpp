@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/11 10:35:22 by trecomps          #+#    #+#             */
-/*   Updated: 2018/04/11 12:09:34 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/11 14:55:19 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,19 +133,105 @@ bool			operator<=(Fixed const &a, Fixed const &b)
 
 Fixed			operator+(Fixed const &a, Fixed const &b)
 {
-	return (a.getRawBits() + b.getRawBits());
+	Fixed		res;
+
+	res.setRawBits(a.getRawBits() + b.getRawBits());
+	return (res);
 }
 
 Fixed			operator-(Fixed const &a, Fixed const &b)
 {
-	return (a.getRawBits() - b.getRawBits());
+	Fixed		res;
+
+	res.setRawBits(a.getRawBits() - b.getRawBits());
+	return (res);
 }
 
 Fixed			operator*(Fixed const &a, Fixed const &b)
 {
 	long		tmp;
 	int			res;
+	Fixed		result;
 
 	tmp = static_cast<long>(a.getRawBits()) * static_cast<long>(b.getRawBits());
 	res = static_cast<int>(tmp >> Fixed::fractional_bit);
+	result.setRawBits(res);
+
+	return (result);
+}
+
+Fixed			operator/(Fixed const &a, Fixed const &b)
+{
+	long		tmp;
+	int			res;
+	Fixed		result;
+
+	tmp = static_cast<long>(a.getRawBits() << Fixed::fractional_bit)
+							/ b.getRawBits();
+	res = static_cast<int>(tmp);
+	result.setRawBits(res);
+
+	return (result);
+}
+
+Fixed		&Fixed::operator++()
+{
+	this->setRawBits(_fixed_val + 1);
+
+	return (*this);
+}
+
+Fixed		Fixed::operator++(int)
+{
+	Fixed	temp = *this;
+	++*this;
+
+	return (temp);
+}
+
+Fixed		&Fixed::operator--()
+{
+	this->setRawBits(_fixed_val - 1);
+
+	return (*this);
+}
+
+Fixed		Fixed::operator--(int)
+{
+	Fixed	temp = *this;
+	--*this;
+
+	return (temp);
+}
+
+Fixed const	&Fixed::min(Fixed const &a, Fixed const &b)
+{
+	if (a <= b)
+		return (a);
+	else
+		return (b);
+}
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a <= b)
+		return (a);
+	else
+		return (b);
+}
+
+Fixed const	&Fixed::max(Fixed const &a, Fixed const &b)
+{
+	if (a >= b)
+		return (a);
+	else
+		return (b);
+}
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a >= b)
+		return (a);
+	else
+		return (b);
 }

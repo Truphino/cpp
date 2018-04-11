@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 18:08:54 by                   #+#    #+#             */
-/*   Updated: 2018/04/11 11:40:31 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/11 14:55:20 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,19 @@
 int
 main( void )
 {
-	Fixed const b( 11.1f);
-	Fixed const c( 10.2f );
+	Fixed		a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-	if (b < c)
-		std::cout << b << " < " << c << std::endl;
-	else
-		std::cout << b << " > " << c << std::endl;
+	std::cout << a << std::endl;
+
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+
+	std::cout << Fixed::max( a, b ) << std::endl;
 
 	return 0;
 }
