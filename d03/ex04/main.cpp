@@ -6,26 +6,26 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 15:24:37 by                   #+#    #+#             */
-/*   Updated: 2017/03/27 12:07:03 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/25 11:30:52 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.class.hpp"
-#include "Scavtrap.class.hpp"
+#include "ScavTrap.class.hpp"
 #include "NinjaTrap.class.hpp"
 #include "SuperTrap.class.hpp"
 
 int			main(void)
 {
-	SuperTrap	sup3r_tp;
+	SuperTrap	sup3r_tp("sup3r_tp");
 	std::cout << std::endl;
-	SuperTrap	supertrap;
+	SuperTrap	supertrap("supertrap");
 	std::cout << std::endl;
-	ClapTrap	claptrap;
+	ClapTrap	claptrap("claptrap");
 	std::cout << std::endl;
-	FragTrap	fragtrap;
+	FragTrap	fragtrap("fragtrap");
 	std::cout << std::endl;
-	NinjaTrap	ninjatrap;
+	NinjaTrap	ninjatrap("ninjatrap");
 	std::cout << std::endl;
 
 	supertrap.meleeAttack("CL4p-TP");
@@ -38,8 +38,6 @@ int			main(void)
 	supertrap.vaulthunter_dot_exe("CL4P-TP");
 	supertrap.vaulthunter_dot_exe("CL4P-TP");
 	supertrap.vaulthunter_dot_exe("CL4P-TP");
-	sup3r_tp.ninjaShoebox(supertrap);
-	sup3r_tp.ninjaShoebox(claptrap);
 	sup3r_tp.ninjaShoebox(fragtrap);
 	sup3r_tp.ninjaShoebox(ninjatrap);
 	supertrap.meleeAttack("CL4p-TP");

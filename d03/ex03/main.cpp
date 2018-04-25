@@ -6,12 +6,12 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 15:24:37 by                   #+#    #+#             */
-/*   Updated: 2017/03/27 11:33:40 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/25 10:30:23 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.class.hpp"
-#include "Scavtrap.class.hpp"
+#include "ScavTrap.class.hpp"
 #include "NinjaTrap.class.hpp"
 
 int			main(void)

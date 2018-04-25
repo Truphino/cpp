@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 10:37:26 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/27 11:04:10 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/25 11:06:37 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <cstdlib>
 #include "ClapTrap.class.hpp"
 
-ClapTrap::ClapTrap(void) : _name("CL4P_TP"), _type("CL4P_TP"),
+ClapTrap::ClapTrap(void) : _name("CL4P_TP"),
 							_hit(100), _max_hit(100),
 							_nrg(100), _max_nrg(100), _level(1), _melee(30),
 							_ranged(20), _armor_reduction(5)
@@ -24,8 +24,8 @@ ClapTrap::ClapTrap(void) : _name("CL4P_TP"), _type("CL4P_TP"),
 	return ;
 }
 
-ClapTrap::ClapTrap(std::string const n, std::string const type) :
-							_name(n), _type(type), _hit(100), _max_hit(100),
+ClapTrap::ClapTrap(std::string const n) :
+							_name(n), _hit(100), _max_hit(100),
 							_nrg(100), _max_nrg(100), _level(1), _melee(30),
 							_ranged(20), _armor_reduction(5)
 
@@ -95,18 +95,12 @@ std::string	ClapTrap::get_name(void) const
 	return (this->_name);
 }
 
-std::string	ClapTrap::get_type(void) const
-{
-	return (this->_type);
-}
-
 ClapTrap		&ClapTrap::operator=(ClapTrap const &rhs)
 {
 	std::cout << "Assignement operator called" << std::endl;
 
 	if (this != &rhs)
 	{
-		this->_type = rhs.get_type();
 		this->_hit = rhs.get_hit();
 		this->_name = rhs.get_name();
 		this->_max_hit = rhs.get_max_hit();
@@ -131,19 +125,19 @@ void		ClapTrap::takeDamage(unsigned int amount)
 {
 	unsigned int	damage;
 
-	if (amount == 0)
+	if (amount == 0 || amount < this->_armor_reduction)
 		return ;
 	damage = (amount - this->_armor_reduction);
 	if (damage < this->_hit)
 	{
 		this->_hit -= damage;
-		std::cout << this->_type << " "  << *this << " take "
+		std::cout << " "  << *this << " take "
 			<< damage << " damage, " << this->_hit << "HP remaining."
 			<< std::endl;
 	}
 	else
 	{
-		std::cout << this->_type << " "  << *this << " take lethal damage."
+		std::cout << " "  << *this << " take lethal damage."
 					<< std::endl;
 		this->_hit = 0;
 	}
@@ -156,13 +150,13 @@ void			ClapTrap::beRepaired(unsigned int amount)
 	if (amount < this->_max_hit - this->_hit)
 	{
 		this->_hit += amount;
-		std::cout << this->_type << " "  << *this << " repair "
+		std::cout << " "  << *this << " repair "
 			<< amount << "HP, " << this->_hit << "HP remaining."
 			<< std::endl;
 	}
 	else
 	{
-		std::cout << this->_type << " "  << *this << " fully repaired."
+		std::cout << " "  << *this << " fully repaired."
 					<< std::endl;
 		this->_hit = this->_max_hit;
 	}
@@ -170,12 +164,12 @@ void			ClapTrap::beRepaired(unsigned int amount)
 
 void			ClapTrap::meleeAttack(std::string const &target) const
 {
-	std::cout << this->_type << " " << *this << " attacks " << target
+	std::cout << " " << *this << " attacks " << target
 			<< " at melee, for " << this->_melee << " damage." << std::endl;
 }
 
 void			ClapTrap::rangedAttack(std::string const &target) const
 {
-	std::cout << this->_type << " "  << *this << " attacks " << target
+	std::cout << *this << " attacks " << target
 			<< " at range, for " << this->_ranged << " damage." << std::endl;
 }

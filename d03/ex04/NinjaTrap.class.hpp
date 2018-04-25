@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 09:41:28 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/27 12:06:11 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/25 10:49:38 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define  NINJATRAP_CLASS_H 
 
 #include "ClapTrap.class.hpp"
+#include "FragTrap.class.hpp"
+#include "ScavTrap.class.hpp"
 #include <iostream>
 
 class NinjaTrap : public virtual ClapTrap
@@ -26,7 +28,9 @@ public :
 	NinjaTrap(NinjaTrap const &rhs);
 	~NinjaTrap(void);
 
-	void				ninjaShoebox(ClapTrap const &rhs);
+	void				ninjaShoebox(NinjaTrap const &rhs);
+	void				ninjaShoebox(FragTrap const &rhs);
+	void				ninjaShoebox(ScavTrap const &rhs);
 };
 
 #endif

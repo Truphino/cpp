@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 09:41:28 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/27 10:56:59 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/25 10:43:19 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ClapTrap.class.hpp"
 #include <iostream>
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 
 public :

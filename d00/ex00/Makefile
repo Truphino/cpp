@@ -16,7 +16,7 @@ FLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
-$(NAME):
+$(NAME): $(SRC)
 	g++ -o $(NAME) $(FLAGS) $(SRC)
 
 fclean:

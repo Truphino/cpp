@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 10:37:26 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/27 11:04:10 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/12 14:44:17 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void		ClapTrap::takeDamage(unsigned int amount)
 {
 	unsigned int	damage;
 
-	if (amount == 0)
+	if (amount == 0 || amount < this->_armor_reduction)
 		return ;
 	damage = (amount - this->_armor_reduction);
 	if (damage < this->_hit)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.class.cpp                                 :+:      :+:    :+:   */
+/*   Scavtrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  <>                                        +#+  +:+       +#+        */
+/*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 14:10:45 by                   #+#    #+#             */
-/*   Updated: 2017/03/27 10:10:40 by trecomps         ###   ########.fr       */
+/*   Created: 2018/04/12 14:41:10 by trecomps          #+#    #+#             */
+/*   Updated: 2018/04/12 14:44:51 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void		ScavTrap::takeDamage(unsigned int amount)
 {
 	unsigned int	damage;
 
-	if (amount == 0)
+	if (amount == 0 || amount < this->_armor_reduction)
 		return ;
 	damage = (amount - this->_armor_reduction);
 	if (damage < this->_hit)

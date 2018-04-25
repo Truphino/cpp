@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 14:10:45 by                   #+#    #+#             */
-/*   Updated: 2017/03/27 11:10:24 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/25 11:12:02 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 #include <cstdlib>
 #include "ScavTrap.class.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap("SC4V-TP", "SC4V-TP")
+ScavTrap::ScavTrap(void) : ClapTrap("SC4V-TP")
 {
+	this->_hit = 100;
+	this->_max_hit = 100;
 	this->_nrg = 50;
 	this->_max_nrg = 50;
+	this->_level = 1;
 	this->_melee = 20;
 	this->_ranged = 15;
 	this->_armor_reduction = 3;
@@ -28,11 +31,13 @@ ScavTrap::ScavTrap(void) : ClapTrap("SC4V-TP", "SC4V-TP")
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string const n) : ClapTrap(n, "SC4V-TP")
-
+ScavTrap::ScavTrap(std::string const n) : ClapTrap(n)
 {
+	this->_hit = 100;
+	this->_max_hit = 100;
 	this->_nrg = 50;
 	this->_max_nrg = 50;
+	this->_level = 1;
 	this->_melee = 20;
 	this->_ranged = 15;
 	this->_armor_reduction = 3;

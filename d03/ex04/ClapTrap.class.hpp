@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 10:34:06 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/27 11:02:33 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/25 11:02:14 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ class ClapTrap {
 public :
 
 	ClapTrap(void);
-	ClapTrap(std::string const name, std::string const type);
+	ClapTrap(std::string const name);
 	ClapTrap(ClapTrap const &rhs);
 	~ClapTrap(void);
 
 	ClapTrap	&operator=(ClapTrap const &rhs);
 
 	std::string				get_name(void) const;
-	std::string				get_type(void) const;
 	unsigned int			get_hit(void) const;
 	unsigned int			get_max_hit(void) const;
 	unsigned int			get_nrg(void) const;
@@ -45,7 +44,6 @@ public :
 protected :
 
 	std::string				_name;
-	std::string				_type;
 	unsigned int			_hit;
 	unsigned int			_max_hit;
 	unsigned int			_nrg;

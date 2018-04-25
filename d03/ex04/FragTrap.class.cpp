@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 14:10:45 by                   #+#    #+#             */
-/*   Updated: 2017/03/27 10:54:16 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/25 11:10:52 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,32 @@
 #include <cstdlib>
 #include "FragTrap.class.hpp"
 
-FragTrap::FragTrap(void) : ClapTrap("FR4G-TP", "FR4G-TP")
+FragTrap::FragTrap(void) : ClapTrap("FR4G-TP")
 {
+	this->_hit = 100;
+	this->_max_hit = 100;
+	this->_nrg = 100;
+	this->_max_nrg = 100;
+	this->_level = 1;
+	this->_melee = 30;
+	this->_ranged = 20;
+	this->_armor_reduction = 5;
 	std::cout << *this << ", your metaphorical ship has finally come in!"
 				<< std::endl;
 
 	return ;
 }
 
-FragTrap::FragTrap(std::string const n) : ClapTrap(n, "FR4G-TP")
+FragTrap::FragTrap(std::string const n) : ClapTrap(n)
 {
+	this->_hit = 100;
+	this->_max_hit = 100;
+	this->_nrg = 100;
+	this->_max_nrg = 100;
+	this->_level = 1;
+	this->_melee = 30;
+	this->_ranged = 20;
+	this->_armor_reduction = 5;
 	std::cout << *this << ", your metaphorical ship has finally come in!"
 				<< std::endl;
 

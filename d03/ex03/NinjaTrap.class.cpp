@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 14:10:45 by                   #+#    #+#             */
-/*   Updated: 2017/03/27 11:35:25 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/04/25 10:32:44 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,16 @@ NinjaTrap::NinjaTrap(void) : ClapTrap("NINJ4-TP", "NINJ4-TP")
 }
 
 NinjaTrap::NinjaTrap(std::string const n) : ClapTrap(n, "NINJ4-TP")
-
 {
+	this->_hit = 60;
+	this->_max_hit = 60;
+	this->_nrg = 120;
+	this->_max_nrg = 120;
 	this->_nrg = 50;
 	this->_max_nrg = 50;
-	this->_melee = 20;
-	this->_ranged = 15;
-	this->_armor_reduction = 3;
+	this->_melee = 60;
+	this->_ranged = 5;
+	this->_armor_reduction = 0;
 	std::cout << *this << ": I'm a new ninja"<< std::endl;
 
 	return ;
@@ -58,26 +61,17 @@ NinjaTrap::~NinjaTrap(void)
 	return ;
 }
 
-void			NinjaTrap::ninjaShoebox(ClapTrap const &rhs)
+void			NinjaTrap::ninjaShoebox(FragTrap const &rhs)
 {
-	if (rhs.get_type() == "CL4P-TP")
-	{
-		std::cout << "Funny CL4P-TP" << std::endl;
-	}
-	else if (rhs.get_type() == "FR4G-TP")
-	{
-		std::cout << "Funny FR4G-TP" << std::endl;
-	}
-	else if (rhs.get_type() == "SC4V-TP")
-	{
-		std::cout << "Funny SC4V-TP" << std::endl;
-	}
-	else if (rhs.get_type() == "NINJ4-TP")
-	{
-		std::cout << "Funny NINJ4-TP" << std::endl;
-	}
-	else
-	{
-		std::cout << "Funny other" << std::endl;
-	}
+	std::cout << "Come here F R LUL G T LUL P " << rhs << std::endl;
+}
+
+void			NinjaTrap::ninjaShoebox(NinjaTrap const &rhs)
+{
+	std::cout << "Oh, a felow ninja, come here " << rhs  << " <3" << std::endl;
+}
+
+void			NinjaTrap::ninjaShoebox(ScavTrap const &rhs)
+{
+	std::cout << "Hey " << rhs << ". It's a trap !!!"  << std::endl;
 }

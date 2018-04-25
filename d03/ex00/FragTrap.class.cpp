@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 14:10:45 by                   #+#    #+#             */
-/*   Updated: 2017/03/23 15:47:00 by                  ###   ########.fr       */
+/*   Updated: 2018/04/12 14:37:00 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void		FragTrap::takeDamage(unsigned int amount)
 {
 	unsigned int	damage;
 
-	if (amount == 0)
+	if (amount == 0 || amount < this->_armor_reduction)
 		return ;
 	damage = (amount - this->_armor_reduction);
 	if (damage < this->_hit)
@@ -182,9 +182,7 @@ void			FragTrap::vaulthunter_dot_exe(std::string const &target)
 	int			rand;
 
 	if (this->_nrg >= 25)
-	{
 		this->_nrg -= 25;
-	}
 	else
 	{
 		std::cout << "FR4G-TP " << *this << " is out of energy." << std::endl;
